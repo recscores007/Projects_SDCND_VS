@@ -1,38 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
 
-
-import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
-import numpy as np
-
-image = mpimg.imread('test.jpg')
-print('This image is: ',type(image), 
-         'with dimensions:', image.shape)
-
-# Grab the x and y size and make a copy of the image
-ysize = image.shape[0]
-xsize = image.shape[1]
-# Note: always make a copy rather than simply using "="
-color_select = np.copy(image)
-
-# Define our color selection criteria
-# Note: if you run this code, you'll find these are not sensible values!!
-# But you'll get a chance to play with them soon in a quiz
-red_threshold = 200
-green_threshold = 200
-blue_threshold = 200
-rgb_threshold = [red_threshold, green_threshold, blue_threshold]
-
-# Identify pixels below the threshold
-thresholds = (image[:,:,0] < rgb_threshold[0]) \
-            | (image[:,:,1] < rgb_threshold[1]) \
-            | (image[:,:,2] < rgb_threshold[2])
-color_select[thresholds] = [0,0,0]
-
-# Display the image                 
-plt.imshow(color_select)
-plt.show()"""
 # Do relevant imports
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
@@ -57,12 +24,6 @@ mask = np.zeros_like(edges)
 
 ignore_mask_color = 255 
 
-## This time we are defining a four sided polygon to mask
-#imshape = image.shape
-#print(imshape)
-#vertices = np.array([[(0,imshape[0]),(0, 0), (imshape[1], 0), (imshape[1],imshape[0])]], dtype=np.int32)
-#cv2.fillPoly(mask, vertices, ignore_mask_color)
-#masked_edges = cv2.bitwise_and(edges, mask)
 
 # Define the Hough transform parameters
 # Make a blank the same size as our image to draw on
