@@ -14,7 +14,7 @@ import numpy as np
 import cv2
 
 vikas=[]
-image = VideoFileClip('solidWhiteRight.mp4') 
+image = VideoFileClip('test.mp4') 
 
 count =0
 for frames in image.iter_frames():
